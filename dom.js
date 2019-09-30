@@ -10,6 +10,10 @@ function addContent(e) {
     let li = document.createElement('li');
     li.className = "list-group-item";
     let item = document.createTextNode(`${input.value}`);
+    let button = document.createElement('button');
+    button.textContent = 'X';
+    button.className = 'btn btn-danger btn-sm float-right delete';
     li.appendChild(item);
+    li.appendChild(button);
     ul.appendChild(li);
 }
