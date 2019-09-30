@@ -1,6 +1,8 @@
 let input = document.querySelector('input[type=text]');
 let button = document.querySelector('input[type=submit]');
+let ul = document.querySelector('ul');
 
+ul.addEventListener('click', removeElement);
 button.addEventListener('click', addContent);
 
 function addContent(e) {
@@ -16,4 +18,12 @@ function addContent(e) {
     li.appendChild(item);
     li.appendChild(button);
     ul.appendChild(li);
+}
+
+function removeElement(e) {
+    if(e.target.className == 'btn btn-danger btn-sm float-right delete') {
+        // alert("x");
+        let li = e.target.parentElement;
+        ul.removeChild(li);
+    }
 }
